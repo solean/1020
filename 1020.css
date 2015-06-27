@@ -1,0 +1,15 @@
+body {
+	color: #48434B;
+}
+
+.header1 {
+	text-align: right;
+	margin-right: 2%;
+	font-family: Rockwell;
+	font-size: 48px;
+	color: #F5A623;
+}
+
+.container {
+	text-align: center;
+}
