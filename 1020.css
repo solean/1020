@@ -1,10 +1,12 @@
 body {
 	color: #48434B;
+	font-family: Futura;
 }
 
 .header1 {
 	text-align: right;
 	margin-right: 2%;
+	margin-bottom: 0;
 	font-family: Rockwell;
 	font-size: 48px;
 	color: #F5A623;
@@ -12,4 +14,8 @@ body {
 
 .container {
 	text-align: center;
+}
+
+#avg, #total {
+	font-size: 22px;
 }

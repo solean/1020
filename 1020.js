@@ -41,9 +41,9 @@ var myLineChart = new Chart(ctx).Line(data, {});
 
 currentTotal = chartData[chartData.length - 1];
 var total = document.getElementById("total");
-total.innerHTML = "$" + currentTotal + " total"
+total.innerHTML = "Total earnings: $" + currentTotal;
 
 avgPerSession = currentTotal / dataLength;
 avgInBB = avgPerSession * 5;
 var avg = document.getElementById("avg");
-avg.innerHTML = "$" + avgPerSession.toFixed(2) + " per (" + avgInBB.toFixed(2) + " BB)";
+avg.innerHTML = "Per session: $" + avgPerSession.toFixed(2) + " (" + avgInBB.toFixed(2) + " BB)";
