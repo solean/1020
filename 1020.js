@@ -1,3 +1,4 @@
+// RAW DATA
 var chartLabels = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", 
              "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23",
              "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34",
@@ -18,9 +19,7 @@ var data = {
         {
             label: "1020",
             fillColor: "rgba(245, 166, 35, .3)",
-            // strokeColor: "rgba(220,220,220,1)",
             strokeColor: "#F5A623",
-            // pointColor: "rgba(220,220,220,1)",
             pointColor: "#fff",
             pointStrokeFill: "#fff",
             pointHighlightFill: "#fff",
@@ -29,21 +28,41 @@ var data = {
         },
     ]
 };
-var dataLength = data.datasets[0].data.length;
-
-var canvas = document.getElementById("myChart");
-var browserWidth = window.innerWidth;
-canvas.style.width = (browserWidth - 30) + "px";
-
-var ctx = canvas.getContext("2d");
-var myLineChart = new Chart(ctx).Line(data, {scaleShowGridLines: false, pointHitDetectionRadius: 5});
 
 
-currentTotal = chartData[chartData.length - 1];
-var total = document.getElementById("total");
-total.innerHTML = "Total earnings: $" + currentTotal;
+// HELPER FUNCTIONS
+function dataLength() {
+    return data.datasets[0].data.length;
+}
 
-avgPerSession = currentTotal / dataLength;
-avgInBB = avgPerSession * 5;
-var avg = document.getElementById("avg");
-avg.innerHTML = "Per session: $" + avgPerSession.toFixed(2) + " (" + avgInBB.toFixed(2) + " BB)";
+function setupCanvas() {
+    var canvas = document.getElementById("myChart");
+    var browserWidth = window.innerWidth;
+    canvas.style.width = (browserWidth - 30) + "px";
+
+    var ctx = canvas.getContext("2d");
+    var myLineChart = new Chart(ctx).Line(data, {scaleShowGridLines: false, pointHitDetectionRadius: 5});
+};
+
+function calculateTotal(data) {
+    return data[data.length - 1];
+}
+
+function calculateAvg(data) {
+    avgPerSession = calculateTotal(data) / dataLength();
+    avgInBB = avgPerSession * 5;
+    return [avgPerSession, avgInBB];
+}
+
+
+// DO STUFF ON PAGE LOAD
+window.onload = function() {
+    setupCanvas();
+
+    var totalElement = document.getElementById("total");
+    totalElement.innerHTML = "Total earnings: $" + calculateTotal(chartData);
+
+    var avg = document.getElementById("avg");
+    avg.innerHTML = "Per session: $" + calculateAvg(chartData)[0].toFixed(2) + " (" 
+        + calculateAvg(chartData)[1].toFixed(2) + " BB)";
+}

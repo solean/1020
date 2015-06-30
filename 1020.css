@@ -1,21 +1,108 @@
 body {
-	color: #48434B;
-	font-family: Futura;
+	color: #322F34;
+	font-family: 'Lato', sans-serif;
+	margin-top: 0;
 }
 
-.header1 {
+.header {
 	text-align: right;
 	margin-right: 2%;
 	margin-bottom: 0;
+	color: #F5A623;
+}
+
+a {
+	text-decoration: none;
+}
+
+#title {
+	color: #F5A623;
 	font-family: Rockwell;
 	font-size: 48px;
-	color: #F5A623;
+	margin-top: .5%;
+	margin-bottom: 0;
+}
+
+#nav a {
+	font-size: 18px;
+	color: #322F34;
+	margin-left: 4px;
+}
+
+#nav a:hover {
+	text-decoration: underline;
 }
 
 .container {
 	text-align: center;
 }
 
+.container p {
+	margin-bottom: 0;
+}
+
+.info {
+	margin-top: 2%;
+}
+
+.info p {
+	margin-top: 4px;
+}
+
 #avg, #total {
 	font-size: 22px;
+}
+
+#add-button {
+	margin-top: 1.5%;
+	font-size: 20px;
+	background-color: transparent;
+	border-style: solid;
+	border-color: #F5A623;
+	border-width: 3px;
+	border-radius: 6px;
+	color: #F5A623;
+}
+
+#add-button:hover {
+	background-color: #F5A623;
+	color: white;
+}
+
+#about-text {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.body-text {
+	text-align: left;
+	font-size: 16px;
+	font-family: Georgia;
+}
+
+.body-text a {
+	color: #F5A623;
+}
+
+.body-text a:hover {
+	text-decoration: underline;
+}
+
+.button {
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	color: #F5A623;
+	border-color: #F5A623;
+	border-style: solid;
+	border-radius: 6px;
+	background-color: transparent;
+}
+
+.button:hover {
+	color: white;
+	background-color: #F5A623;
+}
+
+#source-button {
+	margin-top: 20%;
 }
