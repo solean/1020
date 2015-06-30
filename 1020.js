@@ -17,7 +17,7 @@ var data = {
     datasets: [
         {
             label: "1020",
-            fillColor: "rgba(220,220,220,0.2)",
+            fillColor: "rgba(245, 166, 35, .3)",
             // strokeColor: "rgba(220,220,220,1)",
             strokeColor: "#F5A623",
             // pointColor: "rgba(220,220,220,1)",
@@ -36,7 +36,7 @@ var browserWidth = window.innerWidth;
 canvas.style.width = (browserWidth - 30) + "px";
 
 var ctx = canvas.getContext("2d");
-var myLineChart = new Chart(ctx).Line(data, {});
+var myLineChart = new Chart(ctx).Line(data, {scaleShowGridLines: false, pointHitDetectionRadius: 5});
 
 
 currentTotal = chartData[chartData.length - 1];
